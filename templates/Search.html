@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock title %}
+{% block body %}
+
+
+<section class="projects" id="projects">
+    <h2 class="projects-title">Search Results :</h2>
+
+    <div class="projects-container">
+        {% if allProject|length < 1 %}
+        <div class="search-results">
+             <p>No search results</p>
+                Your search query : <b>{{query}}</b> did not match any documents. <br>
+                Suggestions:
+                <ul>
+                    <li>Make sure that all words are spelled correctly.</li>
+                    <li>Try more general keywords.</li>
+                    <li> Try fewer keywords.</li>
+                    <li> Try different keywords.</li>
+                    </li>
+                </ul>
+            
+        </div>
+        {% endif %}
+
+        
+        {% for Project in allProject %}
+            <div class="project-container project-card">
+                <img src="{{Project.ImageUrl}}" alt="expense-tracker" loading="lazy" class="project-pic" height="170px"
+                    width="270px" />
+                <h3 class="project-title"> {{Project.ProjectName}} </h3>
+                <p class="project-details">
+                    {{Project.ProjectDescription}}
+                </p>
+                <a href="{{Project.SourceCode}}" target="_blank" class="project-link">Check it Out</a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock body %}

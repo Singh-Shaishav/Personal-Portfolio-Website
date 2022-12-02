@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact me {% endblock title %}
+{% block body %}
+
+<div class="contactme">
+    <form method="post" action="/Contact">
+     {% csrf_token %}
+    <div class="row11">
+        <div class="contact-me-header">
+            <h1>CONTACT ME</h1>
+        </div>
+        <div class="contact-me-details">
+            <div class="address"><a><i class="fa fa-map-marker"></i><span>H.no 154, Pant Vihar, I.T.C Road,
+                        Saharanpur(U.P)</span></a>
+                <div class="email"><a href="mailto:27.shaishavsingh@gmail.com"><i class="fa fa-envelope"></i><span>
+                            27.shaishavsingh@gmail.com</span></a></div>
+                <div class="linkedin"><a href="https://www.linkedin.com/in/27-shaishavsingh/" target="_blank"> <i
+                            class="fa fa-linkedin"></i><span>https://www.linkedin.com/in/27-shaishavsingh/</span></a>
+                </div>
+                <div class="mobilw"><a href="tel:+917088587207"><i class="fa fa-phone"></i><span>+91 70885
+                            87207</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row2">
+        <form method="post" action="/Contact">
+            <div class="row2-column1">
+                <label for="fname">Your Name</label>
+                <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your full name *"
+                    required="required" data-error="Fullname is required.">
+                <div class="help-block with-errors"></div>
+                <label for="fname">E-Mail</label>
+                <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email *"
+                    required="required" data-error="Valid email is required.">
+                <div class="help-block with-errors"></div>
+                <label for="fname">Subject</label>
+                <textarea id="form_subject" name="subject" class="form-control" placeholder="Subject"
+                    required="required"></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="row2-column2">
+                <label for="fname">Message</label>
+                <textarea id="form_message" name="message" class="form-control" placeholder="Your Message *" rows="4"
+                    required="required" data-error="Leave a message for me"></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
+
+    </div>
+    <div class="row3">
+        <button class="send-btn" value="">Send message</button>
+    </div>
+    </form>
+</div>
+
+
+ 
+{% endblock body %}

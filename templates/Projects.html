@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Projects {% endblock title %}
+{% block body %}
+
+
+<section class="projects" id="projects">
+    <h2 class="projects-title">Some of my Recent Projects</h2>
+    
+    <div class="projects-container">
+        {% for Project in allProject  %}    
+        <div class="project-container project-card">
+            <img src="{{Project.ImageUrl}}" alt="expense-tracker" loading="lazy" class="project-pic" height="170px" width="270px" />
+            <h3 class="project-title"> {{Project.ProjectName}} </h3>
+            <p class="project-details">
+                {{Project.ProjectDescription}}
+            </p>
+            <a href="{{Project.SourceCode}}" target="_blank" class="project-link">Source Code</a>
+        </div>
+        {% endfor %}   
+             
+    </div>
+
+</section>
+
+
+{% endblock body %}
